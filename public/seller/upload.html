@@ -1,0 +1,61 @@
+<html>
+
+<head>
+	<link rel='stylesheet' href='../css/main.css'>
+	<link rel='stylesheet' href='../css/upload.css'>
+</head>
+
+<body>
+	<header>
+		<span>
+			<span class='_shrink'>
+				<a id='title' href=''>Upload page</a>
+			</span>
+			<span>Home-Upload Page</span>
+		</span>
+	</header>
+	<article>
+		<label id="img">
+			<input type="file" accept="image/png, image/jpeg" style='display:none;' onchange="_preview(this)">
+			<span id='_imgs'>Click here to browse your product image file.</span>
+			<image id='_prev' style='display:none;'></image>
+			<div class='_img _deny'>*Please upload image</div>
+		</label>
+
+		<div class='_info'>
+			<input type='text' id='_nm' placeholder="Enter Product Name">
+			<div class='_nm _deny'>*Please enter valid name</div>
+			<div class='_dup _deny'>*Already exists</div>
+			<div class='_dup _deny'>*Already Exists</div>
+			<input type='text' id='_pr' placeholder="Enter Product Price">
+			<div class='_pr _deny'>*Please enter product price</div>
+			<input type='text' id='_cp' placeholder="Enter Your Phone Number">
+			<div class='_cp _deny'>*Please enter phone number</div>
+			<input type='text' id='_pl' placeholder="Enter Trading place">
+			<div class='_pl _deny'>*Please enter trading place</div>
+			<label>
+				<input id='_seller' type=checkbox> Flea Market
+			</label>
+			<label>
+				<input id='_buyer' type=checkbox> Auction
+			</label>
+			<div class='_sb _deny'>*Please select market type</div>
+			<input type='date' id='_dl' style='display:none' placeholder="Enter deadline">
+			<div class='_dl _deny'>*Please enter valid deadline</div>
+		</div>
+	</article>
+	<span class='_register'>
+		<button onclick=main()>Register Product</button>
+	</span>
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+	<script type=text/javascript src=../js/firebase.js></script>
+	<script type=text/javascript src=../js/main.js></script>
+	<script type=text/javascript src=../js/upload.js></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+body>div{
+	align-items: baseline;
+}
+
+header>div{
+	font-size:11pt;
+}
+
+/* middle */
+._left,
+._right,
+._wrap,
+._menu {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+article {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	width: 100%;
+	box-shadow: 20px 20px 20px 20px #eee;
+}
+
+._menu{
+	margin:auto;
+	width: 25%;
+	font-size:11pt;
+	justify-content:space-between;
+}
+
+._menu>span{
+	cursor: pointer;
+	transition:all.3s;
+}
+._menu>span:hover{
+	font-size:13pt;
+	color:#000;
+	transition:all.3s;
+}
+
+._left,
+._right {
+	height: 400px;
+}
+
+._cart{
+	position:absolute;
+	align-self:flex-end;
+	margin-left:27%;
+}
+/* article _left */
+
+._left {
+	width: 35%;
+	background-color: rgb(181, 220, 129);
+}
+
+._right{
+	width: 65%;
+}
+
+._logout {
+	border: 1px solid #888;
+	border-radius: 20px;
+	transition: all .3s;
+	height: 40px;
+	width: 120px;
+
+	margin-left:auto;
+	margin-right:10%;
+	font-weight:bold;
+}
+
+._logout:hover {
+	background-color: rgb(109, 109, 109);
+	transition: all .3s;
+}
+
+/* article _right */
+
+._wrap>:not(button):not(div) {
+	width: 60%;
+	margin: 6px;
+}
+
+._wrap{
+	width:60%;
+	text-align:left;
+	margin-right:25%;
+	font-size:10pt;
+	font-weight:normal;
+	color:#888;
+}

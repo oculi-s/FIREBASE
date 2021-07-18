@@ -1,0 +1,109 @@
+header {
+	height: 35%;
+	background-color: rgb(188, 213, 228);
+}
+
+header>span {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 0;
+	width: 100%;
+}
+
+header>span>span {
+	font-size: 8pt;
+	width: 100%;
+	flex-basis: 100%;
+	text-align: center;
+}
+
+/* middle */
+article {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 65%;
+	width: fit-content;
+	min-width: 800px;
+	overflow: hidden;
+}
+
+._left {
+	width: 20%;
+}
+
+._right {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	height: 150px;
+}
+
+._right>div {
+	width: 40%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+._info {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	font-size: 13pt;
+	margin-bottom:10px;
+}
+
+._info>div {
+	width: 220px;
+	margin-left: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: left;
+}
+
+._info>div>span:last-of-type {
+	font-weight: normal;
+	color: #888;
+	font-size: 11pt;
+}
+
+input,
+select {
+	background-color: #eee;
+	padding: 5px;
+	width: 250px;
+	margin-top: 10px;
+	transition: none;
+	border: none;
+	text-align: left;
+	color: #888;
+}
+
+input {
+	padding-left: 10px;
+}
+
+input:focus {
+	background-color: #ccc;
+}
+
+._send {
+	width: 1000px;
+	flex-basis: 100%;
+	text-align: right;
+	margin-bottom: auto;
+}
+
+._send>button {
+	background-color: rgb(10, 68, 155);
+	padding: 8px 12px 8px 12px;
+	color: #fff;
+	margin-right: 15%;
+	transition: all .3s;
+}
+
+._send>button:hover {
+	background-color: rgb(4, 24, 54);
+}

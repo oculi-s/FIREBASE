@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href='./css/main.css'>
+    <link rel='stylesheet' href='./css/login.css'>
+</head>
+
+<body>
+    <header>
+        <span class='_shrink _sleft'>
+            <a id='title' href='./index.html'>FLEA MARKET</a>
+        </span>
+    </header>
+    <div>
+        <article>
+            <div class='_left'>
+                <div class='_wrap'>
+                    <span class='_shrink'>New to our website?</span>
+                    <span style='font-size:10pt;'>This web page is Flea Market!</span>
+                    <button class='_create' onclick="location.href='./index.html'">Create an Account</button>
+                </div>
+            </div>
+            <div class='_right'>
+                <div class='_wrap'>
+                    <span class='_shrink'>LOG IN TO ENTER</span>
+                    <div>
+                        <label>
+                            <input id='_seller' type=checkbox> Seller&nbsp;&nbsp;
+                        </label>
+                        <label>
+                            <input id='_buyer' type=checkbox> Buyer
+                        </label>
+                        <div class='_sb _deny'>*Please select user type</div>
+                    </div>
+
+                    <input id='_id' type=text placeholder='ID'>
+                    <div class='_id _deny'>*Please enter your ID</div>
+                    <input id='_pw' type=password placeholder='Password'>
+                    <div class='_pw _deny'>*Please enter your Password</div>
+                    <div class='_main _deny'>*Login failed</div>
+                    <span></span>
+                    <button id='_login' onclick=main()>Log in</button>
+                </div>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <span>
+            copyright @ 2020
+        </span>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script type=text/javascript src=./js/firebase.js></script>
+    <script type=text/javascript src=./js/main.js></script>
+    <script type=text/javascript src=./js/login.js></script>
+    <script>
+    </script>
+</body>
+
+</html>

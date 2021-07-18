@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href='../css/main.css'>
+    <link rel="stylesheet" href='../css/material-icon.css'>
+    <link rel="stylesheet" href='../css/auction.css'>
+</head>
+
+<body>
+    <header>
+        <span class='_shrink'>
+            <a id='title' href=''>SKKU FLEA MARKET</a>
+        </span>
+        <div class='_shrink'>&nbsp;&nbsp;___for Buyer</div>
+        <nav class='_menu'>
+            <span onclick="location.href='../index.html'">Home</span>
+            <span onclick="location.href='./product.html'">Product List</span>
+            <span onclick="location.href='../contact.html'">Contact</span>
+        </nav>
+        <button class='_shop' onclick="location.href='./cart.html'">
+            <span class='_icon'>shopping_cart</span>
+        </button>
+        <button class='_logout' onclick="location.href='../login.html'">Log out</button>
+    </header>
+    <div>
+        <article>
+            <div class='_left'>
+                <image id='_image'></image>
+            </div>
+            <div class='_right _shrink'>
+                <span>Product Name :&nbsp;<span id='_nm'></span></span>
+                <span>Remain Time :&nbsp;<span id='_tm'></span></span>
+                <span>Current Price :&nbsp;<span id='_pr'></span></span>
+                <span>Seller id :&nbsp;<span id='_id'></span></span>
+                <span>Seller Phone Number :&nbsp;<span id='_cp'></span></span>
+                <span>Trading Place :&nbsp;<span id='_pl'></span></span>
+                <div class='_bid'>
+                    <input id='_np' type=text placeholder="New Price">
+			        <div class='_np _deny'>*Please bid higher</div>
+                    <button onclick='_bid()'>BID!</button>
+                </div>
+                <button class='_cart' onclick='_add()'>Add to Cart</button>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <span>
+            copyright @ 2020 by Lee Ki Jung
+        </span>
+    </footer>
+    <div id='_timeinfo' style='display:none;'></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+    <script type=text/javascript src=../js/firebase.js></script>
+    <script type=text/javascript src=../js/main.js></script>
+    <script type=text/javascript src=../js/auction.js></script>
+</body>
+
+</html>

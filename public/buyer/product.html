@@ -1,0 +1,241 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href='../css/main.css'>
+    <link rel="stylesheet" href='../css/material-icon.css'>
+    <style>
+        body>div {
+            min-height: 5%;
+        }
+
+        header>div {
+            font-size: 11pt;
+        }
+
+        ._menu {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            margin: auto;
+            width: 25%;
+            font-size: 11pt;
+            justify-content: space-between;
+        }
+
+        ._menu>span {
+            cursor: pointer;
+            transition: all.3s;
+        }
+
+        ._menu>span:hover {
+            font-size: 13pt;
+            color: #000;
+            transition: all.3s;
+        }
+
+        /* middle */
+
+        ._search {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 60%;
+            background-color: rgb(208, 227, 255);
+            font-size: 11pt;
+
+            margin-top: 5%;
+            margin-bottom: 3%;
+        }
+
+        ._search>span {
+            flex-basis: 100%;
+            text-align: left;
+            margin: 20px;
+        }
+
+        ._search>input {
+            padding: 3px;
+            border-bottom: none;
+            margin: 0 10px 12px 10px;
+        }
+
+        ._search ._icon {
+            background-color: #fff;
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            margin: 0 10px 10px 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        /* middle */
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            margin: auto;
+            width: fit-content;
+            min-width: 800px;
+            background-color: white;
+            box-shadow: 20px 20px 20px 20px #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: auto;
+        }
+
+        ._table {
+            min-height: 300px;
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        ._table thead tr {
+            background-color: rgb(50, 94, 160);
+            color: #fff;
+            height: 50px;
+        }
+
+        ._table td {
+            font-size: 12pt;
+            text-align: center;
+            background-color: transparent;
+            padding: 10px 10px 10px 20px;
+        }
+
+        ._table tr:nth-child(even) {
+            background: rgb(214, 221, 233);
+        }
+
+        ._sold{
+            color:#ccc;
+        }
+
+        ._logout {
+            border: 1px solid #888;
+            border-radius: 20px;
+            transition: all .3s;
+            height: 40px;
+            width: 120px;
+
+            margin-left: auto;
+            margin-right: 10%;
+            font-weight: bold;
+        }
+
+        ._logout:hover {
+            background-color: rgb(109, 109, 109);
+            transition: all .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class='_shrink'>
+            <a id='title' href=''>FLEA MARKET</a>
+        </span>
+        <div class='_shrink'>&nbsp;&nbsp;___for Buyer</div>
+        <nav class='_menu'>
+            <span onclick="location.href='../index.html'">Home</span>
+            <span onclick="location.href='./product.html'">Product List</span>
+            <span onclick="location.href='../contact.html'">Contact</span>
+        </nav>
+        <button class='_shop' onclick="location.href='./cart.html'">
+            <span class='_icon'>shopping_cart</span>
+        </button>
+        <button class='_logout' onclick="location.href='../login.html'">Log out</button>
+    </header>
+    <div>
+        <div class='_search'>
+            <span>Search by Price</span>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:</div>
+            <input id='_from' type='text' value=0>
+            <div>to</div>
+            <input id='_to' type='text' value=999999>
+            <button id='_search' onclick='_refresh()'>
+                <span class='_icon'>search</span>
+            </button>
+        </div>
+    </div>
+    <article>
+        <table class='_table'>
+            <thead>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Current Price</td>
+                    <td>Trading Place</td>
+                    <td>Phone Number</td>
+                    <td>Status</td>
+                    <td>Seller Name</td>
+                </tr>
+            </thead>
+            <tbody id='_tbody'>
+                <tr></tr>
+            </tbody>
+        </table>
+    </article>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script type=text/javascript src=../js/firebase.js></script>
+    <script type=text/javascript src=../js/main.js></script>
+
+    <script>
+        var _tbody = document.getElementById('_tbody');
+        var _from = document.getElementById('_from');
+        var _to = document.getElementById('_to');
+        _tbody.innerHTML = _refresh(_tbody);
+
+        _to.onkeyup = function(e){
+            if (e.keyCode == 13){
+                _refresh()
+            }
+        }
+        _from.onkeyup = function(e){
+            if (e.keyCode == 13){
+                _refresh()
+            }
+        }
+        function _refresh(tbody) {
+            _tbody.innerHTML = ''
+            db.collection("products").get().then(function (q) {
+                var keys = ['nm', 'pr', 'pl', 'cp', 'st', 'id'];
+                for (var i in q.docs) {
+                    _doc = q.docs[i];
+                    c1 = _from.value <= _doc.data().pr;
+                    c2 = _doc.data().pr <= _to.value;
+                    if (c1 && c2) {
+                        var row = document.createElement('tr');
+                        for (var j in keys) {
+                            var td = document.createElement('td');
+                            td.innerText = _doc.data()[keys[j]];
+                            row.appendChild(td);
+                        };
+                        if (_doc.data().st == 'selling'){
+                            row.setAttribute('onclick', `_loadpage('${_doc.data().fa}','${_doc.data().id}','${_doc.data().nm}')`);
+                            row.style.cursor = 'pointer';
+                        } else {
+                            row.setAttribute('class','_sold');
+                        };
+                        _tbody.appendChild(row);
+                    }
+                }
+            });
+            return '';
+        }
+
+        function _loadpage(fa, id, nm) {
+            this.dataurl = `images/${id}/${nm}`
+            this.loginfo = window.opener.loginfo
+            window.open(fa + '.html')
+        }
+    </script>
+</body>
+
+</html>

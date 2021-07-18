@@ -1,0 +1,183 @@
+<html>
+
+<head>
+	<link rel='stylesheet' href='../main.css'>
+	<link rel="stylesheet" href='../material-icon.css'>
+	<style>
+		body>div {
+			min-height: 5%;
+		}
+
+		header>div {
+			font-size: 11pt;
+		}
+
+		._menu {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			margin: auto;
+			width: 25%;
+			font-size: 11pt;
+			justify-content: space-between;
+		}
+
+		._menu>span {
+			cursor: pointer;
+			transition: all.3s;
+		}
+
+		._menu>span:hover {
+			font-size: 13pt;
+			color: #000;
+			transition: all.3s;
+		}
+
+		/* middle */
+		article {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			margin: auto;
+			margin-top: 10%;
+
+			width: fit-content;
+			min-width: 800px;
+			background-color: white;
+			box-shadow: 20px 20px 20px 20px #eee;
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+		._table {
+			min-height: 300px;
+			width: 100%;
+			border-collapse: collapse;
+			border: none;
+		}
+
+		._table thead tr {
+			background-color: rgb(50, 94, 160);
+			color: #fff;
+			height: 50px;
+		}
+
+		._table td {
+			font-size: 12pt;
+			text-align: center;
+			background-color: transparent;
+			padding: 10px 10px 10px 20px;
+		}
+
+		._table tr:nth-child(even) {
+			background: rgb(214, 221, 233);
+		}
+
+		._logout {
+			border: 1px solid #888;
+			border-radius: 20px;
+			transition: all .3s;
+			height: 40px;
+			width: 120px;
+
+			margin-left: auto;
+			margin-right: 10%;
+			font-weight: bold;
+		}
+
+		._logout:hover {
+			background-color: rgb(109, 109, 109);
+			transition: all .3s;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<span class='_shrink'>
+			<a id='title' href=''>SKKU FLEA MARKET</a>
+		</span>
+		<div class='_shrink'>&nbsp;&nbsp;___for Buyer</div>
+		<nav class='_menu'>
+			<span onclick="location.href='../index.html'">Home</span>
+			<span onclick="location.href='./product.html'">Product List</span>
+			<span onclick="location.href='../contact.html'">Contact</span>
+		</nav>
+		<button class='_shop' onclick="location.href='./cart.html'">
+			<span class='_icon'>shopping_cart</span>
+		</button>
+		<button class='_logout' onclick="location.href='../login.html'">Log out</button>
+	</header>
+	<article>
+		<table class='_table'>
+			<thead>
+				<tr>
+					<td>Product Name</td>
+					<td>Current Price</td>
+					<td>Trading Place</td>
+					<td>Phone Number</td>
+					<td>Status</td>
+					<td>Seller Name</td>
+				</tr>
+			</thead>
+			<tbody id='_tbody'>
+				<tr></tr>
+			</tbody>
+		</table>
+	</article>
+	<span id ='_cart'style='display:none;''></span>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+	<script type=text/javascript src=../firebase.js></script>
+	<script type=text/javascript src=../main.js></script>
+
+	<script>
+		var _tbody = document.getElementById('_tbody');
+		var _cart = document.getElementById('_cart');
+		var _loginfo = window.opener.loginfo;
+		_tbody.innerHTML = ''
+		
+		db.collection('users')
+			.where('id', '==', _loginfo)
+			.get().then(function (q) {
+				_cart = document.getElementById('_cart');
+				_doc = q.docs[0];
+				_cart.innerText = _doc.data().cart;
+			})
+
+		db.collection("products").get().then(function (q) {
+			var keys = ['nm', 'pr', 'pl', 'cp', 'st', 'id'];
+			for (var i in q.docs) {
+				_doc = q.docs[i];
+				_docurl = _doc.data().id+'/'+_doc.data().nm
+				if (_cart.innerText.includes(_docurl)) {
+					var row = document.createElement('tr');
+					row.setAttribute('id', _doc.data().id);
+					for (var j in keys) {
+						var td = document.createElement('td');
+						td.innerText = _doc.data()[keys[j]];
+						row.appendChild(td);
+					}
+					row.appendChild(td);
+					row.setAttribute('onclick', `_loadpage('${_doc.data().fa}','${_doc.data().id}','${_doc.data().nm}')`)
+					row.style.cursor = 'pointer'
+
+					_tbody.appendChild(row);
+				}
+			}
+		});
+
+		function _loadpage(fa, id, nm) {
+			this.dataurl = `images/${id}/${nm}`
+			this.loginfo = window.opener.loginfo
+			window.open(fa + '.html')
+		}
+	</script>
+</body>
+
+</html>

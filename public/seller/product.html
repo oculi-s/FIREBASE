@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href='../css/main.css'>
+    <style>
+        header {
+            height: 35%;
+            background-color:rgb(208, 227, 255);
+        }
+
+        header>span {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        header>span>span {
+            font-size: 8pt;
+            width: 100%;
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        ._upload {
+            display:flex;
+            margin-left: 25%;
+            min-height: 5%;
+            width: 1000px;
+            margin-top: 5%;
+        }
+
+        ._upload>button {
+            height:30px;
+            background-color: rgb(10, 68, 155);
+            padding: 8px 12px 8px 12px;
+            color: #fff;
+            transition: all .3s;
+            margin-right:auto;
+        }
+
+        ._upload>button:hover {
+            background-color: rgb(4, 24, 54);
+        }
+
+
+        /* middle */
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            margin:auto;
+            width: fit-content;
+            min-width: 800px;
+            background-color: white;
+            box-shadow: 20px 20px 20px 20px #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: auto;
+        }
+
+        ._table {
+            min-height: 300px;
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        ._table thead tr {
+            background-color: rgb(50, 94, 160);
+            color: #fff;
+            height: 50px;
+        }
+
+        ._table td {
+            text-align:center;
+            padding: 10px 10px 10px 20px;
+        }
+
+        ._table tr:nth-child(even) {
+            background: rgb(214, 221, 233);
+        }
+
+        ._tbody td>* {
+            text-align:center;
+            font-size: 12pt;
+            background-color: transparent;
+        }
+
+        input {
+            padding: 0;
+            border-bottom: none;
+            transition: none;
+            color: #000;
+            background-color: transparent;
+        }
+
+        input:focus {
+            background-color: transparent;
+        }
+
+        ._delete {
+            border: 1px solid #000;
+            border-radius: 20px;
+            transition: all .3s;
+            height: 30px;
+        }
+
+        ._delete:hover {
+            background-color: rgb(190, 207, 233);
+            transition: all .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>
+            <span class='_shrink'>
+                <a id='title' href=''>Product Status For Seller</a>
+            </span>
+            <span>Home-Product Status</span>
+        </span>
+    </header>
+    <span class='_upload'>
+        <button onclick='location.href="./upload.html"'>Upload Product</button>
+    </span>
+    <article>
+        <table class='_table'>
+            <thead>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Current Price</td>
+                    <td>Wish List Person</td>
+                    <td>Status</td>
+                    <td>History</td>
+                </tr>
+            </thead>
+            <tbody id='_tbody'>
+                <tr></tr>
+            </tbody>
+        </table>
+    </article>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script type=text/javascript src=../js/firebase.js></script>
+    <script type=text/javascript src=../js/main.js></script>
+    <script>
+        var _tbody = document.getElementById('_tbody');
+        _tbody.innerHTML = _refresh(_tbody);
+
+        function _refresh(tbody) {
+            _tbody.innerHTML = ''
+            db.collection("products")
+            .where('id', '==', window.opener.loginfo)
+            .get().then(function (q) {
+                var keys = ['nm', 'pr', 'wl', 'st', 'hs'];
+                for (var i in q.docs) {
+                    _doc = q.docs[i];
+                    var row = document.createElement('tr');
+                    for (var j in keys) {
+                        var td = document.createElement('td');
+                        td.innerText = _doc.data()[keys[j]];
+                        row.appendChild(td);
+                    }
+                    tbody.appendChild(row);
+                }
+            });
+            return '';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href='./css/main.css'>
+    <link rel='stylesheet' href='./css/admin.css'>
+</head>
+
+<body>
+    <header>
+        <span>
+            <span class='_shrink'>
+                <a id='title' href=''>Member List</a>
+            </span>
+            <span>You can manage customer list.</span>
+            <span>You can modify customer's student ID, name, password.</span>
+            <span>And you can also delete customer information.</span>
+        </span>
+    </header>
+    <div>
+        <article>
+            <table class='_table'>
+                <thead>
+                    <tr>
+                        <td>Student ID(Name)</td>
+                        <td>Password</td>
+                        <td>E-mail</td>
+                        <td>Buyer/Seller</td>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody id='_tbody'>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </article>
+        <div class='_save'>
+            <button onclick=_save()>Save</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+    <script type=text/javascript src=./js/firebase.js></script>
+    <script type=text/javascript src=./js/main.js></script>
+    <script type=text/javascript src=./js/admin.js></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+header>div {
+	font-size: 11pt;
+}
+
+._menu {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	margin: auto;
+	width: 25%;
+	font-size: 11pt;
+	justify-content: space-between;
+}
+
+._menu>span {
+	cursor: pointer;
+	transition: all.3s;
+}
+
+._menu>span:hover {
+	font-size: 13pt;
+	color: #000;
+	transition: all.3s;
+}
+
+article {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	margin: auto;
+	width: 800px;
+	background-color: white;
+	box-shadow: 20px 20px 20px 20px #eee;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: auto;
+}
+
+._left,
+._right {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+	width: 50%;
+}
+
+._right {
+	height: fit-content;
+	justify-content: end;
+}
+
+._right>* {
+	flex-basis: 100%;
+	text-align: left;
+}
+
+._right>span:not(:first-child) {
+	font-weight: normal;
+	font-size: 13pt;
+}
+
+._bid {
+	flex-basis: 50%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+._bid button {
+	border: 1px solid #000;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+input {
+	border-bottom: none;
+	background-color: #eee;
+	margin-bottom: 10px;
+}
+
+input:focus {
+	background-color: #ccc;
+}
+
+#_image {
+	max-width:100%;
+	max-height:100%;
+}
+
+#_pr{
+	color:rgb(65, 78, 255);
+	font-weight:bold;
+	font-size:14pt;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+._logout,
+._right>button {
+	border: 1px solid #888;
+	border-radius: 20px;
+	transition: all .3s;
+	height: 40px;
+	width: 120px;
+
+	margin-left: auto;
+	margin-right: 10%;
+	font-weight: bold;
+}
+
+._logout:hover {
+	background-color: rgb(109, 109, 109);
+	transition: all .3s;
+}
+
+._right button {
+	flex-basis: 50%;
+	background-color: rgb(10, 68, 155);
+	color: #fff;
+	text-align: center;
+	margin:0;
+	margin-top:30px;
+}
+
+._buy{
+	flex-basis:30% !important;
+	margin-left:10px !important;
+}

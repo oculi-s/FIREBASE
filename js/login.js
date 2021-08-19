@@ -1,6 +1,6 @@
 function main() {
 	if (_id.value == 'admin' && _pw.value == 'admin') {
-		location.replace('/admin.html');
+		location.replace('./admin.html');
 	} else if (!_seller.checked && !_buyer.checked) {
 		_sb_deny.style.display = 'block';
 	} else if (!_id.value) {

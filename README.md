@@ -18,7 +18,7 @@
 ### 1. main page design
 > <image src=https://user-images.githubusercontent.com/44251667/130019500-10a8145d-840d-4851-a112-bc21c5529dd1.png>
 
-### 2. some restrictions for crating account
+### 2. some restrictions for creating account
  >- warning messege is automatically viewed below the input box
  >- duplication check is executed
  <br> <image src=https://user-images.githubusercontent.com/44251667/130017633-7f17c9c5-1383-471c-9091-27053c74e633.png>

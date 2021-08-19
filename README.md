@@ -10,7 +10,7 @@
 ## 1) Admin page
  >- edit user name & password & email & type
  >- delete user and save
-<br> <image src=https://user-images.githubusercontent.com/44251667/130019554-6a27659c-c463-4e06-b321-513ed3f0e4b8.png>
+<br> <image src=https://user-images.githubusercontent.com/44251667/130030480-7a3888e4-4337-4c3b-bef5-bfa54bc8c7d2.png>
 
 <br>
 
@@ -81,5 +81,6 @@
 >- you can add product to cart or buy immediately
 <br><image src=https://user-images.githubusercontent.com/44251667/130023894-ae12400d-f6a3-4fcd-b572-2c7c425d90f3.png>
 
-
-
+### 4. Cart
+>- check itmes in cart
+ <br><image src=https://user-images.githubusercontent.com/44251667/130030675-2e25e843-3657-405e-ba75-39830d2afb32.png>

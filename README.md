@@ -1,5 +1,5 @@
 # FIREBASE
 
-### [LINK](https://oculi-s.github.io/FIREBASE/) <- Activated by Github Pages
-### > Google Firebase Used
-### > 동적으로 DB 소통이 가능한 페이지
+### [link](https://oculi-s.github.io/FIREBASE/) Activated by Github Pages
+
+1) sample internet shopping website that can dynamically interact with [google firebase](https://firebase.google.com/) server

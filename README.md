@@ -19,8 +19,8 @@
 > <image src=https://user-images.githubusercontent.com/44251667/130019500-10a8145d-840d-4851-a112-bc21c5529dd1.png>
 
 ### 2. some restrictions for crating account
- >- messege is automatically viewed below the input box
- >- duplication check is executedif already exists in database
+ >- warning messege is automatically viewed below the input box
+ >- duplication check is executed
  <br> <image src=https://user-images.githubusercontent.com/44251667/130017633-7f17c9c5-1383-471c-9091-27053c74e633.png>
  >- value in email input box should be formatted as valid email address
  <br> <image src=https://user-images.githubusercontent.com/44251667/130018184-c3b001a6-b823-46db-878d-2a6d5df1ff2f.png>
@@ -50,7 +50,7 @@
 ### 3. See product status
 >- only user's product is shown, not other's
 >- product's name, price, users who liked, status, biddings from auction market is shown
->- editing is not allowed
+>- editing is not implemented yet
 >- upload product button takes you to the upload page
 <br><image src=https://user-images.githubusercontent.com/44251667/130020294-7d06c7bd-67d8-4ac5-8d96-96f5aa6e8fdb.png>
 
@@ -74,7 +74,7 @@
 
 ### 2. Bid to auction
 >- if bidding price is less then current price, warning message is shown
->- else, current price is changed
+>- else, current price changes
 <br><image src=https://im2.ezgif.com/tmp/ezgif-2-f40fd4938dc3.gif>
 
 ### 3. Flea market

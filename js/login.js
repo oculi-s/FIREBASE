@@ -45,8 +45,8 @@ _id.onkeyup = function (e) {
 function _loadpage() {
 	this.loginfo = _id.value;
 	if (_seller.checked) {
-		window.open('../seller/seller.html');
+		window.open('./seller/seller.html');
 	} else if (_buyer.checked) {
-		window.open('../buyer/buyer.html');
+		window.open('./buyer/buyer.html');
 	}
 }

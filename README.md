@@ -97,3 +97,23 @@
 <image src=https://user-images.githubusercontent.com/44251667/130021522-f8a0eb98-d947-4e2c-a765-eb6ed709322a.png>
 </div>
 
+## 6) Buyer's page
+### 1. See products on market
+>- main page design is same as seller's
+>- products are classified by the information from seller page
+>- you can filter products by range of price
+
+<div align=center>
+<image src=https://user-images.githubusercontent.com/44251667/130022362-62623596-16e1-4b4b-b1f1-63b6e4c9f87f.png>
+</div>
+
+### 2. Bid to auction
+
+
+
+
+
+
+
+
+

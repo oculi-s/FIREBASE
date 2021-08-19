@@ -1,0 +1,88 @@
+body>div {
+    min-height: 5%;
+}
+
+header>div {
+    font-size: 11pt;
+}
+
+._menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    margin: auto;
+    width: 25%;
+    font-size: 11pt;
+    justify-content: space-between;
+}
+
+._menu>span {
+    cursor: pointer;
+    transition: all.3s;
+}
+
+._menu>span:hover {
+    font-size: 13pt;
+    color: #000;
+    transition: all.3s;
+}
+
+/* middle */
+article {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    margin-top: 10%;
+
+    width: fit-content;
+    min-width: 800px;
+    background-color: white;
+    box-shadow: 20px 20px 20px 20px #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+._table {
+    min-height: 300px;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+._table thead tr {
+    background-color: rgb(50, 94, 160);
+    color: #fff;
+    height: 50px;
+}
+
+._table td {
+    font-size: 12pt;
+    text-align: center;
+    background-color: transparent;
+    padding: 10px 10px 10px 20px;
+}
+
+._table tr:nth-child(even) {
+    background: rgb(214, 221, 233);
+}
+
+._logout {
+    border: 1px solid #888;
+    border-radius: 20px;
+    transition: all .3s;
+    height: 40px;
+    width: 120px;
+
+    margin-left: auto;
+    margin-right: 10%;
+    font-weight: bold;
+}
+
+._logout:hover {
+    background-color: rgb(109, 109, 109);
+    transition: all .3s;
+}

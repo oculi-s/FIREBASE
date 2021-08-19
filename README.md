@@ -1,4 +1,4 @@
-# FIREBASE
+# firebase
 
 ## [link](https://oculi-s.github.io/firebase/) Activated by Github Pages
 

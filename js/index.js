@@ -1,4 +1,3 @@
-
 var _duplicated = false;
 var _dup_deny = document.getElementsByClassName('_dup _deny')[0];
 var _dup_accept = document.getElementsByClassName('_dup _accept')[0];

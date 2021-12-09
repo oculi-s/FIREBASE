@@ -1,6 +1,6 @@
 # firebase
 
-## [link](https://oculi-s.github.io/firebase/) Activated by Github Pages
+## [link](https://oculi-s.github.io/flea_market/) Activated by Github Pages
 
 # overview
 1) sample internet shopping website that can dynamically interact with [google firebase](https://firebase.google.com/) server
@@ -45,7 +45,6 @@
 
 ### 2. some user interaction is added
 >- home button takes you to the main page
-<br><image src=https://im.ezgif.com/tmp/ezgif-1-5add482b6714.gif>
 
 ### 3. See product status
 >- only user's product is shown, not other's
@@ -73,9 +72,9 @@
 <br><image src=https://user-images.githubusercontent.com/44251667/130022362-62623596-16e1-4b4b-b1f1-63b6e4c9f87f.png>
 
 ### 2. Bid to auction
->- if bidding price is less then current price, warning message is shown
+>- if bidding price is less than current price, warning message is shown
 >- else, current price changes
-<br><image src=https://im2.ezgif.com/tmp/ezgif-2-f40fd4938dc3.gif>
+<br><image style='width:100%' src="https://firebasestorage.googleapis.com/v0/b/oculis0925-a2b0b.appspot.com/o/gif%2Fbid.gif?alt=media&token=e7b25fce-3241-4628-b486-7d3973fdcbca">
 
 ### 3. Flea market
 >- you can add product to cart or buy immediately

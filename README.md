@@ -74,7 +74,7 @@
 ### 2. Bid to auction
 >- if bidding price is less than current price, warning message is shown
 >- else, current price changes
-<br><image style='width:100%' src="https://firebasestorage.googleapis.com/v0/b/oculis0925-a2b0b.appspot.com/o/gif%2Fbid.gif?alt=media&token=e7b25fce-3241-4628-b486-7d3973fdcbca">
+<br><image style='width:80%' src="https://firebasestorage.googleapis.com/v0/b/oculis0925-a2b0b.appspot.com/o/gif%2Fbid.gif?alt=media&token=e7b25fce-3241-4628-b486-7d3973fdcbca">
 
 ### 3. Flea market
 >- you can add product to cart or buy immediately
